@@ -116,7 +116,7 @@ void WriteSnapshotHelper()
   unsigned long usec = static_cast<unsigned long>(now % 1000000);
 
   char filename[256];
-  snprintf(filename, sizeof(filename), "heapdump-%lu.%lu.log", sec, usec);
+  snprintf(filename, sizeof(filename), "/srv/shared/heapdump-%lu.%lu.log", sec, usec);
   FILE* fp = fopen(filename, "w");
   if (fp == NULL) return;
 
@@ -134,7 +134,7 @@ void WriteSnapshotHelper()
 
   snprintf(filename,
            sizeof(filename),
-           "heapdump-%lu.%lu.heapsnapshot",
+           "/srv/shared/heapdump-%lu.%lu.heapsnapshot",
            sec,
            usec);
   fp = fopen(filename, "w");
